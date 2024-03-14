@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native';
 import { Text, View } from '@/components/Themed';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationProp } from '@react-navigation/native';
+import { Linking, Alert } from 'react-native';
 
 type SettingsScreenProps = {
     navigation: NavigationProp<any, any>;
@@ -12,10 +13,17 @@ type SettingsScreenProps = {
 const Stack = createStackNavigator();
 
 const SettingsScreen: React.FC<SettingsScreenProps> = ({ navigation }) => {
-  const handlePress = () => {
+  
+  const handlePress= async ()=>{
     const link = "whatsapp://send?text=Hey !, I am using recapit";
-    window.location.href = link;
-  };
+    const supported = await Linking.canOpenURL(link);
+    if (supported) {
+        await Linking.openURL(link);
+      } else {
+        Alert.alert('WhatsApp Not Found', 'Please install WhatsApp to use this feature.');
+      }
+    }
+    
 
   const routes = [
     { data: 'Settings' },
