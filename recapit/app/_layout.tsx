@@ -1,3 +1,6 @@
+// ios 873764684314-1g5ct3rhji5fjrd53qq2q389mnqllsp6.apps.googleusercontent.com
+// web 873764684314-nvs9rguep9adoie4cno33f1i1dfv2vvj.apps.googleusercontent.com
+// web secret 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
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
