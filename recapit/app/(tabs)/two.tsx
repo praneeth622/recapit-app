@@ -1,14 +1,167 @@
 import { StyleSheet } from 'react-native';
-
+import { Button, ButtonGroup, withTheme, Text, Avatar } from '@rneui/themed';
 import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import { View } from '@/components/Themed';
 
+const image_url = 'https://uifaces.co/our-content/donated/6MWH9Xi_.jpg'
+const image_url_back = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Fback-arrow-symbol-vector-26063374&psig=AOvVaw2fJikDoFqYIgjYaiDQiogv&ust=1710797458173000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKjI8amf_IQDFQAAAAAdAAAAABAR'
 export default function TabTwoScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/two.tsx" />
+    <View style={{ backgroundColor: "#fff", flex: 1 }}>
+      <View style={{
+        backgroundColor: "#9E2BD0",
+        flex: 1,
+        marginBottom: 50,
+        borderBottomLeftRadius: 56,
+        borderBottomRightRadius: 56,
+        // borderTopLeftRadius: 56,
+        // borderTopRightRadius: 56
+      }}>
+        <View style={{
+          backgroundColor: "#9E2BD0",
+          marginLeft: 350,
+          marginTop: 20,
+          flexDirection: 'row'
+        }}>
+          <View style={{
+            backgroundColor: "#9E2BD0",
+            marginLeft: -325,
+          }}>
+            <Avatar
+              size={64}
+              rounded
+              source={image_url_back ? { uri: image_url_back } : {}
+              }
+            />
+          </View>
+          <View style={{
+            backgroundColor: "#9E2BD0",
+            marginLeft: 250,
+          }}>
+            <Avatar
+              size={64}
+              rounded
+              source={image_url ? { uri: image_url } : {}
+              }
+            />
+          </View>
+        </View>
+
+        <View style={{
+          backgroundColor: "#9E2BD0",
+          marginLeft: 55,
+          marginRight: 25,
+          marginTop: 100,
+          alignContent: 'center'
+        }}>
+          <Text style={{
+            fontWeight: '700',
+            color: '#fff',
+            fontSize: 25
+          }}>
+            What are the pillars of object-oriented programming?
+          </Text>
+        </View>
+      </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          backgroundColor: '#fff',
+          marginBottom: 50,
+          marginLeft: -50
+        }}>
+        <Button
+          title="Option 1"
+          disabled={false}
+          titleStyle={{ fontWeight: '700', color: '#000' }}
+          buttonStyle={{
+            backgroundColor: '#E8E8E8',
+            borderColor: 'transparent',
+            borderWidth: 0,
+            borderRadius: 5,
+          }}
+          containerStyle={{
+            width: 170,
+            height: 45,
+            marginHorizontal: 70,
+            marginVertical: 10,
+          }}
+        />
+        <Button
+          title="Option 2"
+          disabled={false}
+          titleStyle={{ fontWeight: '700', color: '#000' }}
+          buttonStyle={{
+            backgroundColor: '#E8E8E8',
+            borderColor: 'transparent',
+            borderWidth: 0,
+            borderRadius: 5,
+          }}
+          containerStyle={{
+            width: 170,
+            height: 45,
+            marginHorizontal: -20,
+            marginVertical: 10,
+          }}
+        />
+      </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          backgroundColor: '#fff',
+          marginBottom: 20,
+          marginLeft: -50
+        }}>
+        <Button
+          title="Option 3"
+          disabled={false}
+          titleStyle={{ fontWeight: '700', color: '#000' }}
+          buttonStyle={{
+            backgroundColor: '#E8E8E8',
+            borderColor: 'transparent',
+            borderWidth: 0,
+            borderRadius: 5,
+          }}
+          containerStyle={{
+            width: 170,
+            height: 45,
+            marginHorizontal: 70,
+            marginVertical: 10,
+          }}
+        />
+        <Button
+          title="Option 4"
+          disabled={false}
+          titleStyle={{ fontWeight: '700', color: '#000' }}
+          buttonStyle={{
+            backgroundColor: '#E8E8E8',
+            borderColor: 'transparent',
+            borderWidth: 0,
+            borderRadius: 5,
+          }}
+          containerStyle={{
+            width: 170,
+            height: 45,
+            marginHorizontal: -20,
+            marginVertical: 10,
+          }}
+        />
+      </View>
+      <Button
+        title="I DON'T REMEMBER"
+        titleStyle={{ fontWeight: '700' }}
+        buttonStyle={{
+          backgroundColor: 'rgba(199, 43, 98, 1)',
+          borderColor: 'transparent',
+          borderWidth: 0,
+          borderRadius: 30,
+        }}
+        containerStyle={{
+          width: 320,
+          marginHorizontal: 50,
+          marginVertical: 30,
+        }}
+      />
     </View>
   );
 }
