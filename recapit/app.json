@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -17,7 +17,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundlerIdentifier": "com.anonymous.recapit"
+      "bundleIdentifier": "com.anonymous.recapit"
       
     },
     "android": {
@@ -38,6 +38,7 @@
     "experiments": {
       "typedRoutes": true,
       "tsconfigPath": true
-    }
+    },
+    "scheme": "myapp"
   }
 }
