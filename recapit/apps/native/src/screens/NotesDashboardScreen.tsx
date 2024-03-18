@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   header: {
-    backgroundColor: '#9E2BD0',
+    backgroundColor: '#0D87E1',
     height: 67,
     justifyContent: 'center',
     alignItems: 'center',
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
 
   newNoteButton: {
     flexDirection: 'row',
-    backgroundColor: '#9E2BD0',
+    backgroundColor: '#0D87E1',
     borderRadius: 7,
     width: Dimensions.get('window').width / 1.6,
     alignSelf: 'center',

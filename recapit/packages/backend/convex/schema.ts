@@ -8,4 +8,8 @@ export default defineSchema({
     content: v.string(),
     summary: v.optional(v.string()),
   }),
+  topics: defineTable({
+    subTopics: v.array(v.string()),
+    topicName: v.string(),
+  }),
 });

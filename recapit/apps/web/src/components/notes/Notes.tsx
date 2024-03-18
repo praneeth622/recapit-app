@@ -25,7 +25,7 @@ const Notes = () => {
   return (
     <div className='container pb-10'>
       <h1 className='text-[#2D2D2D] text-center text-[20px] sm:text-[43px] not-italic font-normal sm:font-medium leading-[114.3%] tracking-[-1.075px] sm:mt-8 my-4  sm:mb-10'>
-        Your Notes
+        Your Notaaes
       </h1>
       <div className='px-5 sm:px-0'>
         <div className='bg-white flex items-center h-[39px] sm:h-[55px] rounded border border-solid gap-2 sm:gap-5 mb-10 border-[rgba(0,0,0,0.40)] px-3 sm:px-11'>
