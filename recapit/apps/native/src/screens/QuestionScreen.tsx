@@ -10,7 +10,7 @@ const image_url_back =
 
 const { width, height } = Dimensions.get("window");
 
-export default function TabTwoScreen() {
+export default function TabTwoScreen({ navigation }) {
   const allTopics = useQuery(api.topics.getAllTopics);
   console.log(allTopics);
   const user = useUser();
@@ -48,6 +48,7 @@ export default function TabTwoScreen() {
               size={64}
               rounded
               source={image_url ? { uri: image_url } : {}}
+              onPress={() => navigation.navigate("SettingsScreen")}
             />
           </View>
         </View>
