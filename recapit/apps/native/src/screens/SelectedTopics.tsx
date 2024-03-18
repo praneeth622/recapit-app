@@ -83,6 +83,7 @@ export default function SelectedTopics({ navigation }) {
               size={64}
               rounded
               source={image_url_back ? { uri: image_url_back } : {}}
+              onPress={() => navigation.goBack()}
             />
           </View>
           <View style={styles.avatarContainer}>
@@ -90,6 +91,8 @@ export default function SelectedTopics({ navigation }) {
               size={64}
               rounded
               source={image_url ? { uri: image_url } : {}}
+              onPress={() => navigation.navigate('SettingsScreen')}
+
             />
           </View>
         </View>

@@ -9,10 +9,19 @@ import { BottomSheet, BottomSheetRef } from 'react-spring-bottom-sheet'
 export default function Settings({ navigation }) {
     const user = useUser();
     const image_url = user?.user?.imageUrl;
+    const userdata = user?.user?.fullName;
     return(
         <View >
-            <Text >Settings</Text>
-            <Button onPress={() => navigation.navigate('SelectedTopics')}>Select Topics</Button>
+            <View >
+            <Avatar
+              size={64}
+              rounded
+              source={image_url ? { uri: image_url } : {}}
+              onPress={() => navigation.navigate('SettingsScreen')}
+
+            />
+          </View>
+            <Text >{JSON.stringify(userdata)}</Text>
         </View>
     );
 }
