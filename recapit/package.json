@@ -17,5 +17,9 @@
     "apps/*",
     "packages/*"
   ],
-  "name": "recapit"
+  "name": "recapit",
+  "dependencies": {
+    "@rneui/themed": "^4.0.0-rc.8",
+    "react-native-view-more-text": "^2.2.0"
+  }
 }
