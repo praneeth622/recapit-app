@@ -12,4 +12,9 @@ export default defineSchema({
     subTopics: v.array(v.string()),
     topicName: v.string(),
   }),
+  userSelectedTopics: defineTable({
+    subTopic: v.string(),
+    topicId: v.id("topics"),
+    userId: v.string(),
+  }),
 });

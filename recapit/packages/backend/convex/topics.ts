@@ -7,7 +7,7 @@ export const getUserId = async (ctx: { auth: Auth }) => {
   };
 
 // Get all notes for a specific user
-export const getTopics = query({
+export const getAllTopics = query({
     args: {},
     handler: async (ctx) => {
       const userId = await getUserId(ctx);
@@ -18,4 +18,6 @@ export const getTopics = query({
         .collect();
       return topics;
     },
-  });
+});
+
+  

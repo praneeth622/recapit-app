@@ -10,7 +10,7 @@ const image_url_back = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ve
 const { width, height } = Dimensions.get('window');
 
 export default function TabTwoScreen() {
-  const allTopics = useQuery(api.topics.getTopics);
+  const allTopics = useQuery(api.topics.getAllTopics);
   console.log(allTopics)
   const user = useUser();
   const image_url = user?.user?.imageUrl;
