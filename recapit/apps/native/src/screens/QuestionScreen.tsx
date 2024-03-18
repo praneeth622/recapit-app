@@ -2,12 +2,16 @@ import { StyleSheet, Dimensions, Platform } from 'react-native';
 import { Button, ButtonGroup, withTheme, Text, Avatar } from '@rneui/themed';
 import { View } from './Themed';
 import { useAuth, useUser } from '@clerk/clerk-expo';
+import { api } from '@packages/backend/convex/_generated/api';
+import { useQuery } from 'convex/react';
 
 const image_url_back = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Fback-arrow-symbol-vector-26063374&psig=AOvVaw2fJikDoFqYIgjYaiDQiogv&ust=1710797458173000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKjI8amf_IQDFQAAAAAdAAAAABAR'
 
 const { width, height } = Dimensions.get('window');
 
 export default function TabTwoScreen() {
+  const allTopics = useQuery(api.topics.getTopics);
+  console.log(allTopics)
   const user = useUser();
   const image_url = user?.user?.imageUrl;
   const firstName = user?.user?.firstName;

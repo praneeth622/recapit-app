@@ -13,10 +13,9 @@ export const getTopics = query({
       const userId = await getUserId(ctx);
       if (!userId) return null;
   
-      const notes = await ctx.db
+      const topics = await ctx.db
         .query('topics')
         .collect();
-      console.log(notes)
-      return notes;
+      return topics;
     },
   });
