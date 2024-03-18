@@ -51,6 +51,7 @@ export default function Settings({ navigation }) {
         </View>
       </View>
       <View style={styles.mainProfile}>
+        <Text style={styles.label1}>Notifications frequency:</Text>
         <View style={styles.container}>
           <Text style={styles.label}>Times Per Day:</Text>
           <TextInput
@@ -58,6 +59,15 @@ export default function Settings({ navigation }) {
             keyboardType="numeric"
             value={timesPerDay}
             onChangeText={handleInputChange}
+          />
+        </View>
+        <View>
+          <Button
+            title="Save"
+            disabled={false}
+            titleStyle={{ fontWeight: "700", color: "#fff" }}
+            buttonStyle={styles.commonContainerButton2}
+            containerStyle={styles.commonContainer2}
           />
         </View>
       </View>
@@ -82,20 +92,34 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     paddingHorizontal: 85,
   },
+  commonContainerButton2: {
+    backgroundColor: "#9E2BD0",
+    borderRadius: 25,
+    paddingHorizontal: 45,
+    marginTop: 30,
+  },
   container: {
-    flex: 1,
+    display: "flex",
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
   },
+  label1: {
+    fontSize: 25,
+    color: "#9E2BD0",
+    fontWeight: "800",
+  },
   label: {
     fontSize: 18,
     marginBottom: 10,
+    color: "#000",
+    fontWeight: "bold",
   },
   input: {
     width: "80%",
     borderWidth: 1,
     padding: 10,
     fontSize: 16,
+    color: "#000",
   },
 });
