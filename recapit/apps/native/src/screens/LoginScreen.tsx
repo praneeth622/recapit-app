@@ -18,7 +18,7 @@ const LoginScreen = ({ navigation }) => {
         const { createdSessionId, setActive } = await startGoogleAuthFlow();
         if (createdSessionId) {
           setActive({ session: createdSessionId });
-          navigation.navigate('SelectedTopics');
+          navigation.navigate('TwoScreen');
         }
       } else if (authType === 'apple') {
         const { createdSessionId, setActive } = await startAppleAuthFlow();

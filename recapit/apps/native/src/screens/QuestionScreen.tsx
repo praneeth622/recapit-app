@@ -65,12 +65,13 @@ export default function TabTwoScreen() {
           <Text
             style={{
               fontWeight: "700",
-              color: "#000",
               fontSize: 15,
               padding: 10,
-              backgroundColor: "#fff",
+              color: "#fff",
+              backgroundColor: "#EB75F4",
               marginRight: 20,
-              borderRadius: 1000,
+              borderRadius: 1,
+
             }}
           >
             OOPS
@@ -78,11 +79,12 @@ export default function TabTwoScreen() {
           <Text
             style={{
               fontWeight: "700",
-              color: "#000",
               fontSize: 15,
               padding: 10,
               marginRight: 20,
-              backgroundColor: "#fff",
+              color: "#fff",
+              backgroundColor: "#EB75F4",
+              
             }}
           >
             OS
@@ -112,8 +114,7 @@ export default function TabTwoScreen() {
               fontSize: 25,
             }}
           >
-            What are the pillars of object-oriented programming?riented
-            programming?riented programming?
+            Semaphore ensures ________ in multitasking.
           </Text>
         </View>
       </View>
@@ -150,28 +151,28 @@ export default function TabTwoScreen() {
         }}
       >
         <Button
-          title="Option 1"
+          title="Synchronization"
           disabled={false}
           titleStyle={{ fontWeight: "700", color: "#000" }}
           buttonStyle={styles.commonContainerButton}
           containerStyle={styles.commonContainer}
         />
         <Button
-          title="Option 2"
+          title="Optimization"
           disabled={false}
           titleStyle={{ fontWeight: "700", color: "#000" }}
           buttonStyle={styles.commonContainerButton}
           containerStyle={styles.commonContainer}
         />
         <Button
-          title="Option 3"
+          title="Isolation"
           disabled={false}
           titleStyle={{ fontWeight: "700", color: "#000" }}
           buttonStyle={styles.commonContainerButton}
           containerStyle={styles.commonContainer}
         />
         <Button
-          title="Option 4"
+          title="Concurrency"
           disabled={false}
           titleStyle={{ fontWeight: "700", color: "#000" }}
           buttonStyle={styles.commonContainerButton}
@@ -205,7 +206,7 @@ const styles = StyleSheet.create({
     // alignItems: "center",
     flex: 1,
     paddingHorizontal: 20,
-    paddingBottom: 40,
+    paddingBottom: 60,
     justifyContent: "space-between",
 
     // ...Platform.select({

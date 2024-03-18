@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "NotesContract",
-    "slug": "NotesContract",
+    "name": "recapit",
+    "slug": "recapit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,6 +24,13 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-font"]
+    "plugins": ["expo-font",
+    [
+      "expo-notifications",
+      {
+        "icon": "./src/assets/notification-icon.png",
+        "color": "#082849"
+      }
+    ]]
   }
 }
