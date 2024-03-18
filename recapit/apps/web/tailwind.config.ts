@@ -18,7 +18,7 @@ const config: Config = {
     },
     extend: {
       colors: {
-        primary: '#0D87E1', 
+        primary: '#9E2BD0', 
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],

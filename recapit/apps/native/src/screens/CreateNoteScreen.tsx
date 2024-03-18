@@ -145,7 +145,7 @@ export default function CreateNoteScreen({ navigation }) {
                 <AntDesign
                   name='check'
                   size={RFValue(12.5)}
-                  color='#0D87E1'
+                  color='#9E2BD0'
                   aria-checked
                 />
               )}
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   header: {
-    backgroundColor: '#0D87E1',
+    backgroundColor: '#9E2BD0',
     height: 67,
     justifyContent: 'center',
     alignItems: 'center',
@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
     height: RFValue(17.5),
     borderRadius: RFValue(5),
     borderWidth: 1,
-    borderColor: '#0D87E1',
+    borderColor: '#9E2BD0',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: RFValue(10),
@@ -285,7 +285,7 @@ const styles = StyleSheet.create({
   },
   newNoteButton: {
     flexDirection: 'row',
-    backgroundColor: '#0D87E1',
+    backgroundColor: '#9E2BD0',
     borderRadius: 7,
     width: width / 1.6,
     alignSelf: 'center',

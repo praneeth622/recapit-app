@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F7FE',
   },
   header: {
-    backgroundColor: '#0D87E1',
+    backgroundColor: '#9E2BD0',
     height: 67,
     justifyContent: 'center',
     alignItems: 'center',
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   activeTab: {
-    backgroundColor: '#0D87E1',
+    backgroundColor: '#9E2BD0',
   },
   activeIcon: {
     tintColor: '#fff',

@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     fontSize: RFValue(14),
   },
   buttonEmail: {
-    backgroundColor: '#0D87E1',
+    backgroundColor: '#9E2BD0',
     padding: 15,
     borderRadius: 10,
     width: '100%',

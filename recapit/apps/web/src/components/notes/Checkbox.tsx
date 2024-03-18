@@ -16,7 +16,7 @@ const Checkbox = ({
           type='checkbox'
           checked={isChecked}
           onChange={checkHandler}
-          className='accent-white checked:accent-white w-5 h-5 focus:ring-0 focus:outline-0  border-[#0D87E1] rounded-[6px] bg-[#F9F5FF]'
+          className='accent-white checked:accent-white w-5 h-5 focus:ring-0 focus:outline-0  border-[#9E2BD0] rounded-[6px] bg-[#F9F5FF]'
           disabled={!openaiKeySet}
         />
       </div>
