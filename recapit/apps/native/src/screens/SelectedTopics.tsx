@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Dimensions, ScrollView, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import { Button, ButtonGroup, withTheme, Avatar } from '@rneui/themed';
 import { useQuery, useMutation } from 'convex/react';
 import { api } from '@packages/backend/convex/_generated/api';
 import { useRef } from 'react'
-import { BottomSheet, BottomSheetRef } from 'react-spring-bottom-sheet'
+import RBSheet from "react-native-raw-bottom-sheet";
+import { useUser } from '@clerk/clerk-expo';
+
+const { width, height } = Dimensions.get('window');
+
 export default function SelectedTopics({ navigation }) {
-    const sheetRef = useRef<BottomSheetRef>()
+    const sheetRef = useRef<RBSheet>()
     const allTopics = useQuery(api.topics.getAllTopics);
     const selectedTopics = useQuery(api.userSelectedTopics.getSelectedTopics);
     const selectTopicMutation = useMutation(api.userSelectedTopics.selectTopic);
@@ -50,18 +54,77 @@ export default function SelectedTopics({ navigation }) {
         // navigation.navigate('NotesDashboardScreen');
     };
 
+    const image_url_back =
+  "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Fback-arrow-symbol-vector-26063374&psig=AOvVaw2fJikDoFqYIgjYaiDQiogv&ust=1710797458173000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKjI8amf_IQDFQAAAAAdAAAAABAR";
+
+    const user = useUser();
+    const image_url = user?.user?.imageUrl;
+
     return (
         <View style={styles.container}>
-            <Text style={styles.heading}>Selected Topics:</Text>
-            {selectedTopics.map(topic => (
-            <Text>{topic.subTopic}</Text>
+            <View
+          style={{
+            marginTop: 20,
+            flexDirection: "row",
+            justifyContent: "space-between",
+            width: "100%",
+            // ...Platform.select({
+            //   ios: {
+            //     marginLeft: width * 0.09, // For iOS specific styling
+            //   },
+            //   android: {
+            //     marginLeft: width * 0.09, // For Android specific styling
+            //   },
+            // }),
+          }}
+        >
+          <View style={styles.avatarContainer}>
+            <Avatar
+              size={64}
+              rounded
+              source={image_url_back ? { uri: image_url_back } : {}}
+            />
+          </View>
+          <View style={styles.avatarContainer}>
+            <Avatar
+              size={64}
+              rounded
+              source={image_url ? { uri: image_url } : {}}
+            />
+          </View>
+        </View>
+            <Text style={styles.heading}>Selected Sub Topics:</Text>
+            <View>
+            <Button
+                title="Option 1"
+                disabled={false}
+                titleStyle={{ fontWeight: "700", color: "#000" }}
+                buttonStyle={styles.commonContainerButton}
+                containerStyle={styles.commonContainer}
+            />
+            </View>
+
+            {selectedTopics && selectedTopics.map(topic => (
+                <Text>{topic.subTopic}</Text>
             ))}
             <Text style={styles.heading}>All Topics:</Text>
-            {allTopics.map(topic => (
-            <Text>{topic.topicName} : {JSON.stringify(topic.subTopics)}</Text>
+            {/* {allTopics && allTopics.map(topic => (
+                <Text>{topic.topicName} : {JSON.stringify(topic.subTopics)}</Text>
+            ))} */}
+            <View>
+            {allTopics && allTopics.map(topic => (
+                <Button
+                    key={topic._id} // Assuming each topic has a unique identifier
+                    title={topic.topicName}
+                    disabled={false}
+                    titleStyle={{ fontWeight: "700", color: "#000" }}
+                    buttonStyle={styles.commonContainerButton}
+                    containerStyle={styles.commonContainer}
+                />
             ))}
+            </View>            
             {/* <Button onPress={() => handleSaveTopics(topicId)}>Save</Button> */}
-        
+
         </View>
     );
 }
@@ -76,8 +139,34 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 10,
     },
+    avatarContainer: {
+        backgroundColor: "transparent",
+    },
     topicList: {
         maxHeight: 200,
         marginBottom: 20,
+    },
+    commonContainer: {
+        width: "90%",
+        padding: "2%",
+        display: 'flex',
+        flexWrap: 'wrap'
+        // marginTop: "2%",
+        // backgroundColor: "blue",
+    },
+    commonContainerButton: {
+        backgroundColor: "#E8E8E8",
+        borderColor: "transparent",
+        borderWidth: 0,
+        borderRadius: 5,
+        // display: '',
+        ...Platform.select({
+            ios: {
+                padding: width * 0.025,
+            },
+            android: {
+                padding: width * 0.035,
+            },
+        }),
     },
 });
