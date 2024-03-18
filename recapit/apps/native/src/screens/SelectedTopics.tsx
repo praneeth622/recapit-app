@@ -53,11 +53,11 @@ export default function SelectedTopics({ navigation }) {
     return (
         <View style={styles.container}>
             <Text style={styles.heading}>Selected Topics:</Text>
-            {selectedTopics.map(topic => (
+            {selectedTopics&&selectedTopics.map(topic => (
             <Text>{topic.subTopic}</Text>
             ))}
             <Text style={styles.heading}>All Topics:</Text>
-            {allTopics.map(topic => (
+            {allTopics&&allTopics.map(topic => (
             <Text>{topic.topicName} : {JSON.stringify(topic.subTopics)}</Text>
             ))}
             {/* <Button onPress={() => handleSaveTopics(topicId)}>Save</Button> */}
