@@ -17,8 +17,8 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundlerIdentifier": "com.anonymous.recapit"
-      
+      "bundlerIdentifier": "com.anonymous.recapit",
+      "bundleIdentifier": "com.anonymous.recapit"
     },
     "android": {
       "adaptiveIcon": {
@@ -38,6 +38,15 @@
     "experiments": {
       "typedRoutes": true,
       "tsconfigPath": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "8514a0cf-6abf-405d-8dc4-10aa23b27910"
+      }
+    },
+    "owner": "jashwanthpeddisetty"
   }
 }

@@ -23,7 +23,7 @@ export default function Auth() {
   
 
   const [request, response, promptAsync] = Google.useAuthRequest({
-    // androidClientId: "",
+    androidClientId: "873764684314-hlgfrol6delqoairurdt258sr0kid9au.apps.googleusercontent.com",
     // responseType: "id_token",
     iosClientId: "873764684314-1g5ct3rhji5fjrd53qq2q389mnqllsp6.apps.googleusercontent.com",
     webClientId: "873764684314-nvs9rguep9adoie4cno33f1i1dfv2vvj.apps.googleusercontent.com",
