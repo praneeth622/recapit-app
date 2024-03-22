@@ -14,6 +14,7 @@ export default function TabTwoScreen({ navigation }) {
   const allTopics = useQuery(api.topics.getAllTopics);
   console.log(allTopics);
   const user = useUser();
+  console.log(user)
   const image_url = user?.user?.imageUrl;
   const firstName = user?.user?.firstName;
   return (

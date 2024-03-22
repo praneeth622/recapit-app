@@ -13,18 +13,37 @@ import { api } from "@packages/backend/convex/_generated/api";
 import { useRef } from "react";
 import { useAuth, useUser } from "@clerk/clerk-expo";
 import { BottomSheet, BottomSheetRef } from "react-spring-bottom-sheet";
+import { Linking, Alert } from 'react-native';
+import Slider from '@react-native-community/slider';
+
+
 export default function Settings({ navigation }) {
+
   const user = useUser();
   const image_url = user?.user?.imageUrl;
   const userdata = user?.user?.fullName;
   const [timesPerDay, setTimesPerDay] = useState("1"); // Initial value
+  const [sliderValue, setSliderValue] = useState(0);
+
 
   const handleInputChange = (text) => {
     // Ensure input is a number and within the range 1 to 500
     if (/^\d+$/.test(text) && parseInt(text) >= 1 && parseInt(text) <= 500) {
       setTimesPerDay(text);
     }
+
   };
+
+  const handlePress = async ()=>{
+    const link = "whatsapp://send?text=Hey !, I am using recapit";
+        const supported = await Linking.canOpenURL(link);
+          if (supported) {
+              await Linking.openURL(link);
+            } else {
+              Alert.alert('WhatsApp Not Found', 'Please install WhatsApp to use this feature.');
+            }
+          }
+
   return (
     <View>
       <View style={styles.mainProfile}>
@@ -36,7 +55,7 @@ export default function Settings({ navigation }) {
             onPress={() => navigation.navigate("SettingsScreen")}
           />
         </View>
-        <Text style={{ marginVertical: 15, fontSize: "20", fontWeight: 600 }}>
+        <Text style={styles.text}>
           {JSON.stringify(userdata)}
         </Text>
         <View>
@@ -46,19 +65,26 @@ export default function Settings({ navigation }) {
             titleStyle={{ fontWeight: "700", color: "#fff" }}
             buttonStyle={styles.commonContainerButton}
             containerStyle={styles.commonContainer}
+            onPress={handlePress}
           />
         </View>
       </View>
       <View style={styles.mainProfile}>
         <Text style={styles.label1}>Notifications frequency:</Text>
         <View style={styles.container}>
-          <Text style={styles.label}>Times Per Day:</Text>
-          <TextInput
-            style={styles.input}
-            keyboardType="numeric"
-            value={timesPerDay}
-            onChangeText={handleInputChange}
+          <Text style={styles.label}>Times Per Day: {sliderValue}</Text>
+          
+          <Slider
+            style={{ width: 300, height: 40 }}
+            minimumValue={1}
+            maximumValue={500}
+            minimumTrackTintColor="#9E2BD0"
+            maximumTrackTintColor="#000000"
+            value={sliderValue}
+            step={1}
+            onValueChange={value => setSliderValue(value)}
           />
+          
         </View>
         <View>
           <Button
@@ -66,9 +92,10 @@ export default function Settings({ navigation }) {
             disabled={false}
             titleStyle={{ fontWeight: "700", color: "#fff" }}
             buttonStyle={styles.commonContainerButton2}
-            containerStyle={styles.commonContainer2}
+            containerStyle={styles.commonContainer}
           />
         </View>
+        
       </View>
     </View>
   );
@@ -121,4 +148,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#000",
   },
+  text:{
+    marginVertical:20,
+    fontSize:20
+  }
 });

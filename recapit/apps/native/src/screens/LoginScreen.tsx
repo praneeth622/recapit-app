@@ -18,7 +18,7 @@ const LoginScreen = ({ navigation }) => {
         const { createdSessionId, setActive } = await startGoogleAuthFlow();
         if (createdSessionId) {
           setActive({ session: createdSessionId });
-          navigation.navigate('TwoScreen');
+          navigation.navigate('DashboardScreen');
         }
       } else if (authType === 'apple') {
         const { createdSessionId, setActive } = await startAppleAuthFlow();
@@ -28,7 +28,7 @@ const LoginScreen = ({ navigation }) => {
         }
       }
     } catch (err) {
-      console.error('OAuth error', err);
+      console.error('OAuth error', err.toString());
     }
   };
 

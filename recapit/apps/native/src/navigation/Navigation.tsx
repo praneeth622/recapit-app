@@ -8,6 +8,7 @@ import CreateNoteScreen from '../screens/CreateNoteScreen';
 import TwoScreen from '../screens/QuestionScreen'
 import SelectedTopics from '../screens/SelectedTopics';
 import Settings from '../screens/Settings';
+import DashboardScreen from '../screens/DashboardScreen';
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
@@ -26,6 +27,7 @@ const Navigation = () => {
         />
         <Stack.Screen name="InsideNoteScreen" component={InsideNoteScreen} />
         <Stack.Screen name="CreateNoteScreen" component={CreateNoteScreen} />
+        <Stack.Screen name="DashboardScreen" component={DashboardScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

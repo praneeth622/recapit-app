@@ -11,6 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#9E2BD0"
     },
+    "scheme": "com.recapit",
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
