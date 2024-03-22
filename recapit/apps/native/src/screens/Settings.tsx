@@ -84,6 +84,7 @@ export default function Settings({ navigation }) {
             step={1}
             onValueChange={value => setSliderValue(value)}
           />
+          
         </View>
         <View>
           <Button
