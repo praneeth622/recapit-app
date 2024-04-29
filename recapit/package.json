@@ -19,6 +19,7 @@
   ],
   "name": "recapit",
   "dependencies": {
+    "@notifee/react-native": "^7.8.2",
     "@rneui/themed": "^4.0.0-rc.8",
     "convex": "^1.10.0",
     "expo-notifications": "^0.27.6",

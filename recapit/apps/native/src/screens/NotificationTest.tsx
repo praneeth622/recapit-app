@@ -60,11 +60,11 @@ export default function App() {
 async function schedulePushNotification() {
   await Notifications.scheduleNotificationAsync({
     content: {
-      title: "You've got mail! 📬",
-      body: 'Here is the notification body',
-      data: { data: 'goes here' },
+      title: "hi jashwanth",
+      body: 'aasritha msged you',
+      data: { data: 'here' ,deepLink: 'recapit://SelectedTopics'},
     },
-    trigger: { seconds: 10 },
+    trigger: { seconds: 1 },
   });
 }
 
