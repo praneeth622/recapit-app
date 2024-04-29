@@ -35,10 +35,10 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Image
+        {/* <Image
           source={require('../assets/icons/logo.png')} // Ensure the correct path to your logo image file
           style={styles.logo}
-        />
+        /> */}
         <Text style={styles.title}>Log in to your account</Text>
         <Text style={styles.subtitle}>Welcome! Please login below.</Text>
         <TouchableOpacity

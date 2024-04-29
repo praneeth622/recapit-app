@@ -41,6 +41,8 @@ export default function TabTwoScreen({ navigation }) {
               size={64}
               rounded
               source={image_url_back ? { uri: image_url_back } : {}}
+              onPress={() => navigation.navigate("Notification")}
+
             />
           </View>
           <View style={styles.avatarContainer}>
@@ -48,7 +50,7 @@ export default function TabTwoScreen({ navigation }) {
               size={64}
               rounded
               source={image_url ? { uri: image_url } : {}}
-              onPress={() => navigation.navigate("SettingsScreen")}
+              onPress={() => navigation.navigate("Notification")}
             />
           </View>
         </View>
